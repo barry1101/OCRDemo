@@ -34,6 +34,19 @@ namespace OCRDemo
 
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
+            // 修正Width和Height可能为负数的问题
+            if (_selectArea.Width < 0)
+            {
+                _selectArea.Width = -_selectArea.Width;
+                _selectArea.X -= _selectArea.Width;
+            }
+
+            if (_selectArea.Height < 0)
+            {
+                _selectArea.Height = -_selectArea.Height;
+                _selectArea.Y -= _selectArea.Height;
+            }
+
             Cursor.Clip = Rectangle.Empty;
             _mouseIsDown = false;
             DrawRectangle();
@@ -97,12 +110,7 @@ namespace OCRDemo
             graphics.CopyFromScreen(rect.Left,rect.Top,0,0,
                 new Size(rect.Width,rect.Height));
 
-            var ocr = new AdvancedOcr()
-            {
-                CleanBackgroundNoise = true,
-                EnhanceContrast = true,
-                EnhanceResolution = true,
-            };
+            var ocr = new AutoOcr();
             var result = ocr.Read(img);
 
             Debug.WriteLine(result.Text);
