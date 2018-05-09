@@ -83,6 +83,10 @@ namespace OCRDemo
             ControlPaint.DrawReversibleFrame(rect, Color.White, FrameStyle.Thick);
         }
 
+        /// <summary>
+        /// 识别框选的单词/句子
+        /// </summary>
+        /// <returns>识别的结果</returns>
         private string SelectText()
         {
             var rect = RectangleToScreen(_selectArea);
@@ -106,6 +110,10 @@ namespace OCRDemo
             return result.Text;
         }
 
+        /// <summary>
+        /// 朗读单词/句子
+        /// </summary>
+        /// <param name="text">要朗读的单词/句子</param>
         private void SpeakText(string text)
         {
             const SpeechVoiceSpeakFlags flag = SpeechVoiceSpeakFlags.SVSFlagsAsync;
