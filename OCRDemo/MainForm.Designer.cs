@@ -28,21 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.单词连线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = global::OCRDemo.Properties.Resources.acticle;
+            this.pictureBox.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(879, 770);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.单词连线ToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(901, 28);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "menuStrip";
+            // 
+            // 单词连线ToolStripMenuItem
+            // 
+            this.单词连线ToolStripMenuItem.Name = "单词连线ToolStripMenuItem";
+            this.单词连线ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.单词连线ToolStripMenuItem.Text = "单词连线";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(901, 812);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "课文";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem 单词连线ToolStripMenuItem;
     }
 }
 
