@@ -63,14 +63,15 @@
             // toolStripMenuItem
             // 
             this.toolStripMenuItem.Name = "toolStripMenuItem";
-            this.toolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.toolStripMenuItem.Text = "单词连线";
+            this.toolStripMenuItem.Size = new System.Drawing.Size(111, 24);
+            this.toolStripMenuItem.Text = "点此单词连线";
             this.toolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(901, 812);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.menuStrip);
