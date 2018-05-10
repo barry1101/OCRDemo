@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using IronOcr;
+using SpeechLib;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using IronOcr;
-using SpeechLib;
 
 namespace OCRDemo
 {
@@ -107,8 +100,8 @@ namespace OCRDemo
 
             var graphics = Graphics.FromImage(img);
             graphics.CompositingQuality = CompositingQuality.HighQuality;
-            graphics.CopyFromScreen(rect.Left,rect.Top,0,0,
-                new Size(rect.Width,rect.Height));
+            graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0,
+                new Size(rect.Width, rect.Height));
 
             var ocr = new AutoOcr();
             var result = ocr.Read(img);
@@ -128,6 +121,11 @@ namespace OCRDemo
             var voice = new SpVoice();
             voice.Voice = voice.GetVoices(string.Empty, string.Empty).Item(0);
             voice.Speak(text, flag);
+        }
+
+        private void toolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            new LigatureForm { StartPosition = FormStartPosition.CenterParent }.ShowDialog();
         }
     }
 }

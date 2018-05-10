@@ -30,13 +30,14 @@
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.单词连线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox
             // 
+            this.pictureBox.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBox.Image = global::OCRDemo.Properties.Resources.acticle;
             this.pictureBox.Location = new System.Drawing.Point(12, 30);
             this.pictureBox.Name = "pictureBox";
@@ -52,18 +53,19 @@
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.单词连线ToolStripMenuItem});
+            this.toolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(901, 28);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
-            // 单词连线ToolStripMenuItem
+            // toolStripMenuItem
             // 
-            this.单词连线ToolStripMenuItem.Name = "单词连线ToolStripMenuItem";
-            this.单词连线ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.单词连线ToolStripMenuItem.Text = "单词连线";
+            this.toolStripMenuItem.Name = "toolStripMenuItem";
+            this.toolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.toolStripMenuItem.Text = "单词连线";
+            this.toolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -90,7 +92,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem 单词连线ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem;
     }
 }
 
