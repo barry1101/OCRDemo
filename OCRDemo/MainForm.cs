@@ -11,10 +11,16 @@ namespace OCRDemo
     {
         private bool _mouseIsDown = false;
         private Rectangle _selectArea = Rectangle.Empty;
+        private readonly AutoOcr _ocr;
 
         public MainForm()
         {
             InitializeComponent();
+            _ocr = new AutoOcr();
+
+            // 强制初始化OCR
+            var img = new Bitmap(1,1);
+            _ocr.Read(img);
         }
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -103,8 +109,7 @@ namespace OCRDemo
             graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0,
                 new Size(rect.Width, rect.Height));
 
-            var ocr = new AutoOcr();
-            var result = ocr.Read(img);
+            var result = _ocr.Read(img);
 
             Debug.WriteLine(result.Text);
 
