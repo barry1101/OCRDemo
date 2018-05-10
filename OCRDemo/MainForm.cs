@@ -72,8 +72,7 @@ namespace OCRDemo
             Cursor.Clip = RectangleToScreen(new Rectangle(pictureBox.Location.X, pictureBox.Location.Y,
                 pictureBox.Width, pictureBox.Height));
             _selectArea = new Rectangle(startPoint.X + pictureBox.Location.X,
-                startPoint.Y + pictureBox.Location.Y,
-                pictureBox.Location.X, pictureBox.Location.Y);
+                startPoint.Y + pictureBox.Location.Y,1,1);
         }
         /// <summary>  
         /// 在鼠标移动的时改变选择框的大小  
